@@ -3,10 +3,11 @@ package testing;
 
 
 
-import static org.junit.Assert.*;
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 import services.Booking;
+
+import org.junit.Test;
 
 public class TestBooking {
 	Booking book = new Booking();
