@@ -7,4 +7,5 @@ public double booking(int noOfPersons, int rates){
     totalRate = noOfPersons * rates;
     return totalRate;
 }
+}
 
