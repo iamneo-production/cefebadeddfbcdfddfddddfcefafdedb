@@ -9,7 +9,7 @@ import org.junit.Test;
 import services.Booking;
 
 public class TestBooking {
-	static Booking book = new Booking();
+	 Booking book = new Booking();
 
 	@Test
 	public void testBookingMethod() {

@@ -16,7 +16,7 @@ import model.Train;
 import services.FareCalculator;
 
 public class TestFareCalculator {
-	 static FareCalculator fare = new FareCalculator();
+	  FareCalculator fare = new FareCalculator();
 
 	@Test
 	public void testBook() {
