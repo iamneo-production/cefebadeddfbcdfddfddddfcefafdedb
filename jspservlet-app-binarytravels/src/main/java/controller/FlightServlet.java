@@ -1,70 +1,70 @@
-package model;
+package controller;
 
+import java.io.IOException;
 import java.time.LocalDate;
 
-public class Flight{
-    private int noOfPersons;
-    private String classType;
-    private int rates;
-    private LocalDate from;
-    private LocalDate to;
-    private String triptype;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-    public int getNoOfPersons() {
-        return noOfPersons;
-    }
+import model.Flight;
+import services.FareCalculator;
 
-    public void setNoOfPersons(int noOfPersons) {
-        this.noOfPersons = noOfPersons;
-    }
 
-    public String getClassType() {
-        return classType;
-    }
 
-    public void setClassType(String classType) {
-        this.classType = classType;
-    }
+@WebServlet("/jspservlet-app-binarytravels/flight")
+public class FlightServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 
-    public int getRates() {
-        return rates;
-    }
 
-    public void setRates(int rates) {
-        this.rates = rates;
-    }
+	public FlightServlet() {
+		super();
 
-    public LocalDate getFrom() {
-        return from;
-    }
+	}
 
-    public void setFrom(LocalDate from) {
-        this.from = from;
-    }
 
-    public LocalDate getTo() {
-        return to;
-    }
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+		dispatcher.forward(request, response);
+	}
 
-    public void setTo(LocalDate to) {
-        this.to = to;
-    }
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int numberOfPersons=Integer.parseInt(request.getParameter("persons"));
+		String classtype=request.getParameter("class");
+		String from=request.getParameter("from");
+		String to=request.getParameter("to");
+		String triptype=request.getParameter("trip");
 
-    public String getTriptype() {
-        return triptype;
-    }
+		int rates;
+		if(classtype.equals("executive")){
+			rates=7500;
+		}
+		else {
+			rates=5000;
+		}
+		LocalDate start=LocalDate.parse(from);		
+		LocalDate end=LocalDate.parse(to);
 
-    public void setTriptype(String triptype) {
-        this.triptype = triptype;
-    }
+		Flight flight=new Flight(numberOfPersons,classtype,rates,start,end,triptype);
+		flight.setNoOfPersons(numberOfPersons);
+		flight.setRates(rates);
+		flight.setClassType(classtype);
+		flight.setFrom(start);
+		flight.setTo(end);
 
-    public Flight(int noOfPersons, String classType, int rates, LocalDate from, LocalDate to, String triptype) {
-        this.noOfPersons = noOfPersons;
-        this.classType = classType;
-        this.rates = rates;
-        this.from = from;
-        this.to = to;
-        this.triptype = triptype;
-    }
-    	
+		FareCalculator fare=new FareCalculator();
+
+		double rate=fare.book(flight);
+		request.setAttribute("flighttype", flight.getTriptype());
+		request.setAttribute("fromdate", flight.getFrom());
+		request.setAttribute("todate", flight.getTo());
+		request.setAttribute("person", flight.getNoOfPersons());
+		request.setAttribute("flightfare", rate);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("flight.jsp");
+		dispatcher.forward(request, response);
+	}
+
 }
