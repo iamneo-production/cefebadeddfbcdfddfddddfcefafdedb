@@ -17,7 +17,7 @@ public double book(Flight flight) {
         return totalFare;
     }else{
         int comp = (flight.getFrom()).compareTo(flight.getTo());
-        if(comp < 0)
+        if(comp <= 0)
             return 2 * totalFare;
         else
             return 0;
