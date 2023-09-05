@@ -59,8 +59,8 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="testing.TestHotel" name="testGetNoOfPersonMethod" time="0.003"/>
-  <testcase classname="testing.TestHotel" name="testGetRateMethod" time="0"/>
+  <testcase classname="testing.TestHotel" name="testGetNoOfPersonMethod" time="0.002"/>
+  <testcase classname="testing.TestHotel" name="testGetRateMethod" time="0.001"/>
   <testcase classname="testing.TestHotel" name="testGetRoomType" time="0.001"/>
   <testcase classname="testing.TestHotel" name="testSetDate" time="0"/>
 </testsuite>
