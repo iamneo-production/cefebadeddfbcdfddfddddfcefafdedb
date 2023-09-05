@@ -1,14 +1,14 @@
 -------------------------------------------------------------------------------
 Test set: testing.TestFareCalculator
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec <<< FAILURE!
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec <<< FAILURE!
 testBook(testing.TestFareCalculator)  Time elapsed: 0.005 sec  <<< FAILURE!
-java.lang.AssertionError: expected:<7350.0> but was:<50700.0>
+java.lang.AssertionError: expected:<90000.0> but was:<40000.0>
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:834)
 	at org.junit.Assert.assertEquals(Assert.java:553)
 	at org.junit.Assert.assertEquals(Assert.java:683)
-	at testing.TestFareCalculator.testBook(TestFareCalculator.java:31)
+	at testing.TestFareCalculator.testBook(TestFareCalculator.java:27)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
