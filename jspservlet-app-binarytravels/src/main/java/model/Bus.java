@@ -39,5 +39,7 @@ public class Bus{
 		this.date = date;
 	}	
 
+	
+
 }
 	
