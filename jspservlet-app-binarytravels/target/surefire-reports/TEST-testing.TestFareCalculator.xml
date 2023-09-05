@@ -43,7 +43,7 @@
     <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
     <property name="java.vm.specification.version" value="11"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test"/>
     <property name="java.home" value="/usr/lib/jvm/java-11-openjdk-amd64"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -59,15 +59,15 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="testing.TestFareCalculator" name="testFlightMethod" time="0.007"/>
+  <testcase classname="testing.TestFareCalculator" name="testFlightMethod" time="0.01"/>
   <testcase classname="testing.TestFareCalculator" name="testBusMethod" time="0"/>
-  <testcase classname="testing.TestFareCalculator" name="testBook" time="0.007">
-    <failure message="expected:&lt;7350.0&gt; but was:&lt;700.0&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;7350.0&gt; but was:&lt;700.0&gt;
+  <testcase classname="testing.TestFareCalculator" name="testBook" time="0.004">
+    <failure message="expected:&lt;90000.0&gt; but was:&lt;40000.0&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;90000.0&gt; but was:&lt;40000.0&gt;
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:834)
 	at org.junit.Assert.assertEquals(Assert.java:553)
 	at org.junit.Assert.assertEquals(Assert.java:683)
-	at testing.TestFareCalculator.testBook(TestFareCalculator.java:31)
+	at testing.TestFareCalculator.testBook(TestFareCalculator.java:27)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
