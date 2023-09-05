@@ -38,6 +38,5 @@ public class Bus{
 		this.rates = rates;
 		this.date = date;
 	}	
-
 }
 	
