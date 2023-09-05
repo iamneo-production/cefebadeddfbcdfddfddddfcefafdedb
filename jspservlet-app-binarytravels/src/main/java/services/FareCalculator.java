@@ -25,7 +25,8 @@ public double book(Flight flight) {
 }
 
 public double book(Bus bus) {
-    return booking(bus.getNoOfPersons(),bus.getRates());
+    double totalFare = booking(bus.getNoOfPersons(),bus.getRates());
+    return totalFare;
 }
 
 public double book(Hotel hotel) {
@@ -37,14 +38,8 @@ public double book(Hotel hotel) {
 }
 
 public double book(Train train) {
-    return booking(train.getNoOfPersons(),train.getRates());
+    double totalFare = booking(train.getNoOfPersons(),train.getRates());
+    return totalFare;
 }
 
 }
-
-
-
-
-
-
-

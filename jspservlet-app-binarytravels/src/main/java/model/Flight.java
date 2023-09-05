@@ -67,8 +67,5 @@ public class Flight{
         this.triptype = triptype;
     }
  
-
-
+	
 }
-
-

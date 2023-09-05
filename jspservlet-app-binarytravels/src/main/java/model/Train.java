@@ -39,4 +39,3 @@ public class Train{
 		this.date = date;
 	}
 }
-

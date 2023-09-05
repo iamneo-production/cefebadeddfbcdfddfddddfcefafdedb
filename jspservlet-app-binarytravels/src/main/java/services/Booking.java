@@ -9,5 +9,3 @@ public double booking(int noOfPersons, int rates){
 }
 }
 
-
-
